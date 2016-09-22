@@ -42,15 +42,13 @@ public class Logout {
 		driver.get("http://dev.ames.edu.au/shop/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
 
 	}
 
 	@Test
 	public void logoutFunction() throws Exception{
 		logout = new LoginFunction();
-		logout.loginFunction(driver,"cainaisi@qq.com", "sj191013");
-
+		logout.loginFunction(driver,"test@gmail.com", "adactin");
 		clickLogoutButton();
 
 	}

@@ -12,15 +12,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Homepage_Login_Happycase {
+public class Login_Negativecase {
 
 	public WebDriver driver;
 	public WebElement homepage_login;
 	public WebElement username;
 	public WebElement password;
 	public WebElement login;
-	public String expected;
-	public String actual;
+	public WebElement error_msg;
+	public String actual_msg;
 	
 	public void clickHomepageLoginButton(){
 		homepage_login = driver.findElement(By.linkText("Login"));
@@ -44,10 +44,10 @@ public class Homepage_Login_Happycase {
 		login.click();
 	}
 	
-	public void assertTitle(){
-		expected = "My Account - AMES";
-		actual = driver.getTitle();
-		assertEquals(actual, expected);
+	public void assertErrorMassage(String expected_msg){
+		error_msg = driver.findElement(By.cssSelector(".woocommerce-error"));
+		actual_msg = error_msg.getText();
+		assertEquals(actual_msg, expected_msg);
 	}
 	
 	@Before
@@ -61,10 +61,10 @@ public class Homepage_Login_Happycase {
 	public void login() throws Exception {
 		
 		clickHomepageLoginButton();
-		enterUsername("cainaisi@qq.com");
-		enterPassword("sj191013");
+		enterUsername("");
+		enterPassword("adactin");
 		clickLogin();
-		assertTitle();
+		assertErrorMassage("Error: Username is required.");
 
 	}
 	

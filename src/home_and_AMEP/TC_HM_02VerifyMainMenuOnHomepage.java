@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TC_HM_02 {
+public class TC_HM_02VerifyMainMenuOnHomepage {
 	public WebDriver driver;
 	List<WebElement> navigation_links;
 	List<String> links;
@@ -23,6 +23,7 @@ public class TC_HM_02 {
 	public List<String> getNavigationLinks(){
 		navigation_links = driver.findElements(By.xpath("//*[@id='mega-menu-primary-menu']/li/a"));
 		links = new ArrayList<>();
+		
 		for(WebElement link: navigation_links){
 			links.add(link.getText());
 	}

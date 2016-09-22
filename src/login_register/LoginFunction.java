@@ -14,8 +14,7 @@ public class LoginFunction {
 	public WebElement username;
 	public WebElement password;
 	public WebElement login;
-	public String expected;
-	public String actual;
+
 	
 	
 	
